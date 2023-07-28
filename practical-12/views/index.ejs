@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multi-Language App</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: lightcyan;
+    margin: 30vh;
+    padding: 0;
+    }
+
+    h1 {
+    text-align: center;
+    margin-top: 0;
+    }
+
+    form {
+    text-align: center;
+    margin-bottom: 20px;
+    }
+
+    select {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    }
+
+    p {
+    text-align: center;
+    font-size: 25px;
+    }
+
+    select:hover {
+    background-color: white;
+    }
+
+    select:focus {
+    background-color: #d1d1d1;
+    }
+
+  </style>
+</head>
+<body>
+  <h1><%= __('welcome') %></h1>
+  <form action="/" method="GET">
+    <select name="lang" onchange="this.form.submit()">
+      <option value="en" <%= (locale === 'en') ? 'selected' : '' %>>English</option>
+      <option value="gu" <%= (locale === 'gu') ? 'selected' : '' %>>Gujarati</option>
+      <option value="hin" <%= (locale === 'hin') ? 'selected' : '' %>>Hindi</option>
+      <option value="fr" <%= (locale === 'fr') ? 'selected' : '' %>>French</option>
+    </select>
+  </form>
+  <p><%= __('greeting') %></p>
+</body>
+</html>
